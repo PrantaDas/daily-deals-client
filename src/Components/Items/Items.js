@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Item from '../Item/Item';
 
 const Items = () => {
@@ -24,6 +26,9 @@ const Items = () => {
                 {
                     products.map(product=><Item key={product._id} product={product}></Item>)
                 }
+            </div>
+            <div className='mt-5'>
+                <Link to='/manageinventories'><Button variant='primary'>Manage Inventories</Button></Link>
             </div>
         </div>
     );
