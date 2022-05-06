@@ -1,4 +1,4 @@
-import { signInWithEmailAndPassword,sendPasswordResetEmail } from 'firebase/auth';
+import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
 import React, { useState } from 'react';
 import { Button, Form, Toast } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
@@ -8,7 +8,7 @@ import auth from '../../firebase.init';
 import './Login.css'
 
 const Login = () => {
-    const [emails, setEmails] = useState({value:'',error:''});
+    const [emails, setEmails] = useState({ value: '', error: '' });
 
     const navigate = useNavigate();
     // const [
@@ -17,12 +17,12 @@ const Login = () => {
     //     loading,
     //     error,
     // ] = useSignInWithEmailAndPassword(auth);
-   
 
-    const handleEmail=(event)=>{
-        const email=event.target.value;
+
+    const handleEmail = (event) => {
+        const email = event.target.value;
         console.log(email);
-        setEmails({value:email,error:''});
+        setEmails({ value: email, error: '' });
     }
 
     const handleLogin = (event) => {
@@ -30,11 +30,12 @@ const Login = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         console.log(email, password);
-        
+
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log(user);
+                navigate('/');
                 event.target.reset();
             })
             .catch((error) => {
@@ -60,10 +61,10 @@ const Login = () => {
     }
 
     const handleResetPassword = () => {
-        
-        
+
+
         if (emails.value === "") {
-            setEmails({value:'',error:'Please Provide Your Email first'});
+            setEmails({ value: '', error: 'Please Provide Your Email first' });
         }
         else {
             sendPasswordResetEmail(auth, emails.value)
@@ -97,9 +98,9 @@ const Login = () => {
                         <Form.Label>Email address</Form.Label>
                         <Form.Control onChange={handleEmail} name='email' type="email" placeholder="Enter email" autoComplete='off' required />
                     </Form.Group>
-                   {
-                       emails.error && (<p className='text-danger'>{emails.error}</p>)
-                   }
+                    {
+                        emails.error && (<p className='text-danger'>{emails.error}</p>)
+                    }
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
