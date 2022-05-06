@@ -34,7 +34,7 @@ const Header = () => {
                             </NavDropdown>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">More deets</Nav.Link>
+                            <Nav.Link as={Link} to='/inventory'>Inventory Items</Nav.Link>
                             {
                                 user ? <Nav.Link onClick={handleSignOut} eventKey={2} href="#memes">
                                     Signout

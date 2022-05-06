@@ -1,7 +1,7 @@
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
 import React, { useState } from 'react';
 import { Button, Form, Toast } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
@@ -11,13 +11,9 @@ const Login = () => {
     const [emails, setEmails] = useState({ value: '', error: '' });
 
     const navigate = useNavigate();
-    // const [
-    //     signInWithEmailAndPassword,
-    //     user,
-    //     loading,
-    //     error,
-    // ] = useSignInWithEmailAndPassword(auth);
-
+    const location=useLocation();
+    
+    let from = location.state?.from?.pathname || '/';
 
     const handleEmail = (event) => {
         const email = event.target.value;
@@ -35,7 +31,7 @@ const Login = () => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log(user);
-                navigate('/');
+                navigate(from, { replace: true });
                 event.target.reset();
             })
             .catch((error) => {

@@ -50,12 +50,3 @@ const Banner = () => {
 };
 
 export default Banner;
-
-{/* <div className='mx-5 mt-5 col d-flex flex-column col-sm-12 align-items-start'> 
-<h1 className='text-light fs-1'>A Large Stock </h1>
-<h1 className='text-light fs-1'>Of Groceries</h1>
-<p className='banner-details'>Here we offer you a large scale of enhnanced facilities to stock your goods and do a fair trade.Easily stock your items and make a quick trade..</p>
-</div>
-<div className='col col-sm-12'>
-<img src={bannerImg} alt="" />
-</div> */}

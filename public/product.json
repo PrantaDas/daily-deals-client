@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Bashmati Rice",
+        "image": "",
+        "description": "Fresh and premium quality rice",
+        "price": "120",
+        "quantity": "35",
+        "supplier": "Rahim",
+        "email": "rahim@gmail.com"
+    },
+    {
+        "name": "Miniket Rice",
+        "image": "",
+        "description": "Premium quality and chemical free rice.",
+        "price": "100",
+        "quantity": "56",
+        "supplier": "Karim",
+        "email": "karim@gmail.com"
+    },
+    {
+        "name": "Masur Dal",
+        "image": "",
+        "description": "Fresh and tasty full of nutritional quality",
+        "price": "140",
+        "quantity": "25",
+        "supplier": "Jashim",
+        "email": "jashim@gmail.com"
+    },
+    {
+        "name": "Mug Dal",
+        "image": "",
+        "description": "Fresh and good food value ,directly extracted from farmers",
+        "price": "160",
+        "quantity": "57",
+        "supplier": "Abdul",
+        "email": "abdul@gmail.com"
+    },
+    {
+        "name": "Flour",
+        "image": "",
+        "description": "Fresh flour containig all food value and preservatives free",
+        "price": "70",
+        "quantity": "88",
+        "supplier": "Kuddus",
+        "email": "kuddus@gmail.com"
+    },
+    {
+        "name": "Sugar",
+        "image": "",
+        "description": "Factory made harmful chemical free sugar",
+        "price": "75",
+        "quantity": "127",
+        "supplier": "Bablu",
+        "email": "bablu@gmail.com"
+    },
+    {
+        "name":"Oil",
+        "image":"",
+        "description":"Teer Oil containing all food grade quality and colestrol free",
+        "price":"660",
+        "quantity":"200",
+        "supplier":"Mahir",
+        "email":"mahir@gmail.com"
+    },
+    {
+        "name":"Egg",
+        "image":"",
+        "description":"Farm fresh eggs collected from the local poultry farm",
+        "price":"120",
+        "quantity":"39",
+        "supplier":"Shahana",
+        "email":"shahana@gmail.com"
+    },
+    {
+        "name":"Potato",
+        "image":"",
+        "description":"Fresh potato ,free from all chemicals and pesticides",
+        "price":"30",
+        "quantity":"86",
+        "supplier":"Sujon",
+        "email":"sujon@gmail.com"
+    },
+    {
+        "name":"Fish",
+        "image":"",
+        "description":"Refrigarated fish with no harmful chmicals and preservatives",
+        "price":"200",
+        "quantity":"345",
+        "supplier":"Hamid",
+        "email":"hamid@gmail.com"
+    }
+]
