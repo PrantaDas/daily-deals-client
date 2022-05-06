@@ -1,7 +1,7 @@
 import React from 'react';
 import './Banner.css'
 import { Carousel } from 'react-bootstrap';
-import banner1 from '../Assets/Images/Banner/pexels-negative-space-34577 (1).jpg';
+import banner1 from '../Assets/Images/Banner/pexels-alesia-kozik-6771985.jpg';
 import banner2 from '../Assets/Images/Banner/pexels-aleksandar-pasaric-3423860.jpg';
 import banner3 from '../Assets/Images/Banner/pexels-tima-miroshnichenko-7567565 (1).jpg';
 
