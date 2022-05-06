@@ -1,0 +1,7 @@
+.update {
+    border-radius: 6px;
+    background: #e0e0e0;
+    box-shadow: 20px 20px 100px #bebebe,
+        -20px -20px 100px #ffffff;
+        max-height: 400px;
+}

@@ -16,8 +16,8 @@ const Items = () => {
     const products=items.slice(0,6);
     console.log(products);
     return (
-        <div className='container-fluid'>
-            I<p style={{color:"#ff006e"}} className='fs-3 fw-bolder'>Inventory Items</p>
+        <div className='container-fluid mt-3'>
+            <p style={{color:"#ff006e"}} className='fs-3 fw-bolder'>Inventory Items</p>
             <hr />
 
             <div className='row container-fluid ms-5 g-5 mt-3'>
