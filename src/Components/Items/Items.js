@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Item from '../Item/Item';
+import './Items.css'
 
 const Items = () => {
     const [items,setItems]=useState([]);
@@ -22,7 +23,7 @@ const Items = () => {
             <p style={{color:"#ff006e"}} className='fs-3 fw-bolder'>Inventory Items</p>
             <hr />
 
-            <div className='row container-fluid ms-5 g-5 mt-3'>
+            <div className='row container-fluid items-container g-5 mt-3'>
                 {
                     products.map(product=><Item key={product._id} product={product}></Item>)
                 }

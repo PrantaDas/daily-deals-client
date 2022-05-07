@@ -39,8 +39,6 @@ const ItemDetail = () => {
             .then(data => {
                 console.log(data);
                 setReload(!reload)
-                // setItem(data)
-
             })
     }
 
@@ -69,8 +67,6 @@ const ItemDetail = () => {
                 console.log(data);
                 setReload(!reload)
                 event.target.reset();
-                // setItem(data)
-
             })
     }
     return (
