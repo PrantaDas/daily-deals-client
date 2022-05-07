@@ -39,11 +39,6 @@ const ManageInventory = () => {
     }
 
 
-    const handleUpdateQuantity=(event,id,quantity)=>{
-        const givenquantity=event.target.quanity.value;
-        console.log(givenquantity,id,quantity);
-    }
-
     return (
         <div className='mt-5 '>
             <div className='d-flex justify-content-end my-3 p-2'>
@@ -68,7 +63,7 @@ const ManageInventory = () => {
                                     <td>{product.name}</td>
                                     <td>{product.price} tk</td>
                                     <td>{product.quantity}</td>
-                                    <td><Link to={`/manageinventories/update/${product._id}`}><button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><MdArrowCircleUp/></button></Link></td>
+                                    <td><Link to={`/manageinventories/update/${product._id}`}><button type="button" className="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><MdArrowCircleUp/></button></Link></td>
                                     <td><button onClick={() => handleDeleteItem(product._id)} type="button" className="btn btn-link"><AiFillDelete /></button></td>
                                 </tr>
 

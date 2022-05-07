@@ -26,6 +26,9 @@ const SignUp = () => {
         navigate('/');
         event.target.reset();
     }
+    if(loading){
+        return (<p className='text-primary'>Loading......</p>)
+    }
     if (user) {
         console.log(user);
     }

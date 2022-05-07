@@ -1,0 +1,12 @@
+.footer-title{
+    font-family: 'Permanent Marker', cursive;
+}
+
+.footer-container{
+    background-color: black;
+    height: 300px;
+}
+.content{
+    margin-top: 50px;
+    padding: 33px;
+}
