@@ -6,6 +6,7 @@ import './Items.css'
 
 const Items = () => {
     const [items,setItems]=useState([]);
+    const [isLoading,setIsLoading]=useState(true);
 
     useEffect(()=>{
         const url=`http://localhost:5000/products`;
@@ -14,6 +15,7 @@ const Items = () => {
         .then(data=>{
             console.log(data);
             setItems(data);
+            setIsLoading(false);
         })
     },[]);
     const products=items.slice(0,6);
@@ -25,7 +27,7 @@ const Items = () => {
 
             <div className='row container-fluid items-container g-5 mt-3'>
                 {
-                    products.map(product=><Item key={product._id} product={product}></Item>)
+                    products.map(product=><Item key={product._id} product={product} isLoading={isLoading}></Item>)
                 }
             </div>
             <div className='mt-5'>

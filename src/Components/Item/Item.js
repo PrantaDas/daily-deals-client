@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, Spinner } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 import './Item.css'
 
-const Item = ({ product }) => {
+const Item = ({ product,isLoading }) => {
     const { name, price, image, description, supplier, quantity,_id } = product;
-    return (
+    return isLoading ? (<Spinner animation="border" variant="primary" />) : (
         <div className='col-lg-4 col-sm-12'>
             <Card className='p-3 item-card' style={{ width: '18rem' }}>
                 <Card.Img  variant="top" src={image} />
