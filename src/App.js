@@ -14,6 +14,7 @@ import UpdateItem from './Components/UpdateItem/UpdateItem';
 import MyItems from './Components/MyItems/MyItems';
 import Footer from './Components/Shared/Footer/Footer';
 import NotFound from './Components/NotFound/NotFound';
+import Blogs from './Components/Blogs/Blogs';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <MyItems></MyItems>
         </RequireAuth>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
       </Routes>
       
       <Footer></Footer>

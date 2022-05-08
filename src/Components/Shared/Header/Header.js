@@ -52,6 +52,7 @@ const Header = () => {
                             {
                                 user && (<Nav.Link as={Link} to='/myitems'>My Items</Nav.Link>)
                             }
+                            <Nav.Link as={Link} to='/blogs'>Blogs</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
