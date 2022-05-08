@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './SignUp.css'
 import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { FcGoogle } from "react-icons/fc";
 
 
 const SignUp = () => {
@@ -68,7 +69,7 @@ const SignUp = () => {
                 </Form>
                 <p className='pb-3'><small className=''>Already have an account? <span onClick={navigateLogin} role="button" className='text-primary fw-bolder'>Login Here</span></small></p>
                 <div className='pb-3'>
-                    <Button onClick={handleSiginInWithGoogle} variant='info'>Signin With Google</Button>
+                    <Button onClick={handleSiginInWithGoogle} variant='info'><span className='px-2'><FcGoogle/></span> Signin With Google</Button>
                 </div>
             </div>
         </div>

@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
 import './Login.css'
 import { MdErrorOutline} from "react-icons/md";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
     const [emails, setEmails] = useState({ value: '', error: '' });
@@ -132,7 +133,7 @@ const Login = () => {
                 </div>
                 <p className='pb-5'><small className=''>New to Daily Deals ? <span onClick={navigateToRegister} role="button" className='text-primary fw-bolder'>Register Here</span></small></p>
                 <div className='pb-3'>
-                    <Button onClick={handleSiginInWithGoogle} variant='info'>Signin With Google</Button>
+                    <Button onClick={handleSiginInWithGoogle} variant='info'><span className='px-2'><FcGoogle/></span> Signin With Google</Button>
                 </div>
             </div>
             <ToastContainer />
