@@ -23,7 +23,7 @@ const AddItem = () => {
 
         const product = {
             name: name,
-            image: image,
+            img: image,
             description: description,
             price: price,
             quantity: quantity,
@@ -31,7 +31,7 @@ const AddItem = () => {
             email: email
         };
 
-        const url = `http://localhost:5000/products`;
+        const url = `https://sleepy-wildwood-12378.herokuapp.com/products`;
         fetch(url, {
             method: 'POST',
             headers: {

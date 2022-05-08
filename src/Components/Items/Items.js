@@ -9,7 +9,7 @@ const Items = () => {
     const [isLoading,setIsLoading]=useState(true);
 
     useEffect(()=>{
-        const url=`http://localhost:5000/products`;
+        const url=`https://sleepy-wildwood-12378.herokuapp.com/products`;
         fetch(url)
         .then(res=>res.json())
         .then(data=>{

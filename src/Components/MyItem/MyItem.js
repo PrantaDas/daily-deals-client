@@ -7,7 +7,7 @@ const MyItem = ({item,setIsLoading}) => {
     const handleDeleteItem = (id) => {
         const proceed = window.confirm('Are you sure to delete ?');
         if (proceed) {
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://sleepy-wildwood-12378.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

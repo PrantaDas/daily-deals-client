@@ -9,7 +9,7 @@ const ItemDetail = () => {
     const [quantity, setQuantity] = useState('');
     const [reload, setReload] = useState(true);
     useEffect(() => {
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://sleepy-wildwood-12378.herokuapp.com/products/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -27,7 +27,7 @@ const ItemDetail = () => {
             quantity: newQuantity
         };
 
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://sleepy-wildwood-12378.herokuapp.com/products/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -54,7 +54,7 @@ const ItemDetail = () => {
             quantity: updatedQuantity
         };
 
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://sleepy-wildwood-12378.herokuapp.com/products/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -73,7 +73,7 @@ const ItemDetail = () => {
         <div className='row g-5 container mt-5 '>
             <div className='d-flex justify-content-center col-lg-8 col-sm-12'>
                 <Card className='p-3' style={{ width: '18rem',backgroundColor:'#C7D9E5'}}>
-                    <Card.Img variant="top" src={item.image} />
+                    <Card.Img variant="top" src={item.img} />
                     <Card.Body>
                         <Card.Title>{item.name}</Card.Title>
                         <p className='fw-bolder'>Price:{item.price}tk</p>

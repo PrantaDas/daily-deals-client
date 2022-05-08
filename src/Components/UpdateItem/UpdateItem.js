@@ -9,7 +9,7 @@ const UpdateItem = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://sleepy-wildwood-12378.herokuapp.com/products/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -31,7 +31,7 @@ const UpdateItem = () => {
 
         const product = {
             name: name,
-            image: image,
+            img: image,
             description: description,
             price: price,
             quantity: quantity,
@@ -39,7 +39,7 @@ const UpdateItem = () => {
             email: email
         };
 
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://sleepy-wildwood-12378.herokuapp.com/products/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

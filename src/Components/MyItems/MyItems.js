@@ -16,7 +16,7 @@ const MyItems = () => {
             console.log(user);
             const email = user.email;
             console.log(email);
-            const url = `http://localhost:5000/myitems?email=${email}`;
+            const url = `https://sleepy-wildwood-12378.herokuapp.com/myitems?email=${email}`;
             const { data } = await axios.get(url,{
                 headers:{
                     authorization:`Bearer ${localStorage.getItem('accessToken')}`
@@ -32,7 +32,7 @@ const MyItems = () => {
     const handleDeleteItem = (id) => {
         const proceed = window.confirm('Are you sure to delete ?');
         if (proceed) {
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://sleepy-wildwood-12378.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -56,7 +56,7 @@ const MyItems = () => {
                 myItems.map(item=>{
                     return(<div key={item._id} className='col-lg-4 col-sm-12'>
                     <Card className='p-3 item-card' style={{ width: '18rem',backgroundColor:'#C7D9E5' }}>
-                        <Card.Img  variant="top" src={item.image} />
+                        <Card.Img  variant="top" src={item.img} />
                         <Card.Body>
                             <Card.Title>{item.name}</Card.Title>
                             <p className='fw-bolder'>Price:{item.price}tk</p>
