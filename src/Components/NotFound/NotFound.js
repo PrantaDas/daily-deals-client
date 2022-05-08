@@ -1,6 +1,5 @@
 import React from 'react';
 import './NotFound.css'
-import notfound from '../Assets/Images/NotFound/404 Error-pana.svg'
 import notfound2 from '../Assets/Images/NotFound/404 Error with a cute animal-cuate.svg'
 import { Link } from 'react-router-dom';
 
