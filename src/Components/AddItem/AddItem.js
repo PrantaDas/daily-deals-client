@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const AddItem = () => {
     const [user] = useAuthState(auth);
+    const [loading,setLoading]=useState(true);
+    const navigate=useNavigate();
+
 
     const handleAddItem = (event) => {
         event.preventDefault();
@@ -39,6 +43,8 @@ const AddItem = () => {
             .then(data => {
                 console.log(data);
                 event.target.reset();
+                setLoading(!loading);
+                navigate('/manageinventories');
             })
     }
 

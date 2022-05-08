@@ -72,7 +72,7 @@ const ItemDetail = () => {
     return (
         <div className='row g-5 container mt-5 '>
             <div className='d-flex justify-content-center col-lg-8 col-sm-12'>
-                <Card style={{ width: '18rem' }}>
+                <Card className='p-3' style={{ width: '18rem',backgroundColor:'#C7D9E5'}}>
                     <Card.Img variant="top" src={item.image} />
                     <Card.Body>
                         <Card.Title>{item.name}</Card.Title>

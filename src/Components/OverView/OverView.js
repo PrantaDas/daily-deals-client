@@ -4,7 +4,7 @@ import './OverView.css'
 const OverView = () => {
     return (
         <div>
-            <p className='fs-2 text-primary fw-bolder my-3'>Overview</p>
+            <p className='fs-2 text-primary fw-bolder my-3 footer-title'>Overview</p>
             <div className='mt-5 overview-container container'>
                 <div className="col-md-10 ">
                     <div className="row gx-5">

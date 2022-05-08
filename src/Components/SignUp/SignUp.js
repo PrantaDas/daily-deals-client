@@ -1,5 +1,5 @@
 import { Button, Form } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './SignUp.css'
 import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
@@ -16,6 +16,11 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
 
+    const location=useLocation();
+
+    let from = location.state?.from?.pathname || '/';
+    
+
     const handleRegister = (event) => {
         event.preventDefault();
         const email = event.target.email.value;
@@ -23,7 +28,7 @@ const SignUp = () => {
         console.log(email, password);
 
         createUserWithEmailAndPassword(email, password);
-        navigate('/');
+        navigate(from, { replace: true });
         event.target.reset();
     }
     if(loading){
@@ -37,6 +42,7 @@ const SignUp = () => {
     }
     const handleSiginInWithGoogle = () => {
         signInWithGoogle();
+        navigate(from, { replace: true });
     }
     if (user1) {
         console.log(user1)
@@ -62,7 +68,7 @@ const SignUp = () => {
                 </Form>
                 <p className='pb-3'><small className=''>Already have an account? <span onClick={navigateLogin} role="button" className='text-primary fw-bolder'>Login Here</span></small></p>
                 <div className='pb-3'>
-                    <Button onClick={handleSiginInWithGoogle} variant='info'>Sign With Google</Button>
+                    <Button onClick={handleSiginInWithGoogle} variant='info'>Signin With Google</Button>
                 </div>
             </div>
         </div>

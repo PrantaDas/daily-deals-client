@@ -22,7 +22,7 @@ const Items = () => {
     console.log(products);
     return (
         <div className='container-fluid mt-3'>
-            <p style={{color:"#ff006e"}} className='fs-3 fw-bolder'>Inventory Items</p>
+            <p style={{color:"#ff006e"}} className='fs-3 fw-bolder footer-title'>Inventory Items</p>
             <hr />
 
             <div className='row container-fluid items-container g-5 mt-3'>

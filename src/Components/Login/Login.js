@@ -1,59 +1,70 @@
-import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
+import axios from 'axios';
+import { sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
 import { Button, Form, Toast } from 'react-bootstrap';
+import { useSignInWithGoogle,useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
 import './Login.css'
+import { MdErrorOutline} from "react-icons/md";
 
 const Login = () => {
     const [emails, setEmails] = useState({ value: '', error: '' });
 
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useSignInWithEmailAndPassword(auth);
+
+    const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
+
     const navigate = useNavigate();
-    const location=useLocation();
+    const location = useLocation();
+
     
+
     let from = location.state?.from?.pathname || '/';
 
     const handleEmail = (event) => {
         const email = event.target.value;
-        console.log(email);
+        // console.log(email);
         setEmails({ value: email, error: '' });
     }
 
-    const handleLogin = (event) => {
+    const handleLogin = async (event) => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
         console.log(email, password);
 
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                console.log(user);
-                navigate(from, { replace: true });
-                event.target.reset();
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log('error', error)
-                if (errorMessage.includes('auth/wrong-password')) {
-                    toast.error('Invalid Password', {
-                        theme: 'colored'
-                    })
-                }
-                if (errorMessage.includes('uth/user-not-found')) {
-                    toast.error('User Not Found', {
-                        theme: 'colored'
-                    })
-                }
-            });
+        await signInWithEmailAndPassword(email,password);
 
+        const {data}=await axios.post('http://localhost:5000/login',{email});
+        console.log(data);;
+        localStorage.setItem('accessToken',data.accessToken);
+        navigate(from, { replace: true });
+        
+
+    }
+
+    
+    if(loading){
+        return (<div>
+            <p>loading.....</p>
+        </div>)
     }
 
     const navigateToRegister = () => {
         navigate('/signup');
+    }
+
+    const handleSiginInWithGoogle = () => {
+        signInWithGoogle();
+        navigate(from, { replace: true });
     }
 
     const handleResetPassword = () => {
@@ -106,6 +117,9 @@ const Login = () => {
                         Login
                     </Button>
                 </Form>
+                {
+                    error && (<p className='text-danger'><span className='px-1'><MdErrorOutline/></span>Inavalid email or password</p>)
+                }
                 <p><small>Forget Password? <span onClick={handleResetPassword} className='text-primary fw-bolder' role='button'>Reset Password</span></small></p>
                 <div className='d-flex justify-content-between align-items-center px-3'>
                     <div className='line '>
@@ -117,6 +131,9 @@ const Login = () => {
                     </div>
                 </div>
                 <p className='pb-5'><small className=''>New to Daily Deals ? <span onClick={navigateToRegister} role="button" className='text-primary fw-bolder'>Register Here</span></small></p>
+                <div className='pb-3'>
+                    <Button onClick={handleSiginInWithGoogle} variant='info'>Signin With Google</Button>
+                </div>
             </div>
             <ToastContainer />
         </div>
